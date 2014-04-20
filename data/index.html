@@ -1,0 +1,78 @@
+<html>
+
+<h1>CS 488: Extended Raytracer project</h1>
+<h4>Created by Tara Munikar</h4>
+<h4>Winter 2014</h4>
+
+<h2> Objectives </h2>
+
+<ol>
+	<li>
+		Extra primitives: Cones and Cylinders
+		<br /> <br />
+		<img src="demo_pictures/test_conics.png" />
+	</li>
+	<br />
+	<li> 
+		Texture mapping 
+		<br /> <br />
+		<img src="textures/earth.png" width="300" />
+		<img src="textures/fleurdelis.png" width="300"/>
+		<img src="demo_pictures/test_texture.png" />
+	</li>
+	<br />
+	<li> 
+		Bump Mapping
+		<ul>
+			<li> There are two examples of bump mapping shown here. </li>
+			<li> The one on the right uses a grey scale height map shown below and is calculated using Blinn's method of finding partial derivatives to determine preturbation of the normal </li>
+			<li> The one of the left uses the more commonly used normal map, which explicitly defines the normals using RGB values </li>
+		</ul>
+		<br /> <br />
+		<img src="textures/sample_normal_map.png" width="300" height = "300" />
+		<img src="textures/sample_bump_map.png" width="300" height = "300" />
+		<img src="demo_pictures/test_bump.png" />
+	</li>
+	<br />
+	<li> 
+		Constructive Solid Geometry (from top to bottom: intersection, difference, union)
+		<br /> <br />
+		<img src="demo_pictures/test_csg.png" />
+	</li>
+	<br />
+	<li> 
+		Depth of Field (left: no Depth of Field applied, right: Depth of Field applied at the center sphere, with a aperture size of 0.3)
+		<br /> <br />
+		<img src="demo_pictures/test.png" />
+		<img src="demo_pictures/test_dof.png" />
+	</li>
+	<br />
+	<li> 
+		Glossy Reflection (left: mirror reflection, right: Glossy Reflection using 8 reflected rays)
+		<br /> <br />
+		<img src="demo_pictures/nonhier.png" width="300" />
+		<img src="demo_pictures/nonhier_glossy.png" width="300" />
+	</li>
+	<br />
+	<li> 
+		Anti-Aliasing using Supersampling and Jitter (left: no anti-aliasing, right: 16 sample rays)
+		<br /> <br />
+		<img src="demo_pictures/nonhier.png" width="300" />
+		<img src="demo_pictures/nonhier_supersample.png" width="300" />
+	</li>
+	<br />
+	<li> 
+		Refraction 
+		<br /> <br />
+		<img src="demo_pictures/test_refract.png" />
+	</li>
+	<li> 
+		Final Scene (left: without Depth of Field, right: with Depth of Field)
+		<br /> <br />
+		<img src="demo_pictures/final.png" />
+		<img src="demo_pictures/final_dof.png" />
+	</li>
+	<br />
+</ol>
+
+</html>

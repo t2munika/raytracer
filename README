@@ -1,0 +1,68 @@
+Name: Tara Munikar
+Student Number: 20329581
+User-id: t2munika
+Assignment: #5 (project)
+
+The final executable was compiled on this machine: gl06
+
+How to invoke my program: 
+./rt -[option] [value] -[option] [value]
+
+Options included are
+NUM_THREADS: value is the number of threads spawned by the process for rendering
+NUM_SUPERSAMPLE: value is a number n where there are n x n rays cast per pixel
+NUM_GLOSSY_RAYS: the number of rays spawned per reflection to simulate glossy reflection
+NUM_DOF_RAYS: the number of rays per pixel spawned to simulate depth of field
+
+How to use my extra features: 
+Building on the assignment 4 ray tracer, the following fields have been added:
+1) For refraction purposes, two optional fields were added to a lua material: 
+   -a transparency coefficient 
+   ([0, 1] where 0 is opaque and 1 is completely transparent)
+   -a refraction index
+2) For texture mapping, a new object called gr.texture which takes in a .png containing the texture was created. It is used in the same way as other materials
+3) For bump and normal mapping, new methods called set_bump_map() and set_normal_map were created for materials. 
+   -set_bump_map() uses greyscale height maps and Blinn's method of calculating normals using partial derivatives. 
+   -set_normal_map() uses the more commonly used normal map where normals are explicitly defined by their RGB data.
+4) Extra primitives gr.cylinder and gr.cone were added. By default:
+   -Cylinders have a center of (0, 0, 0), are y-axis aligned and a radius of 1. The center of the top cap is (0, 1, 0) and the center o the bottom cap is (0, -1, 0)
+   -Cones are y-axis aligned, with its apex at (0, 0, 0) and a radius of 1.
+5) For Depth of Field, two optional parameters were added to the gr.render() method (both must be specified):
+   -the focal length: determines where the focal plane z = -eye.z + focal_length
+   -the aperture: determines the radius of the lens
+6) For solid constructive geometry, three new types of nodes were added:
+   -gr.intersect: takes the intersection of all of the children to the node
+   -gr.difference: from the first child, subtracts the subsequent children
+   -gr.union: each child is drawn if hit
+
+I have created the following data files, which are in the data directory:
+index.html - webpage for objectives (hosted at http://tinyurl.com/cs488-t2munika)
+
+Textures and Height/Normal maps (these were gotten off the internet, not made by me [in textures/]):
+blue_scales.png  earth.png	 	 red_scales.png       sample_normal_map.png  seashell.png
+bumpy.png	 	 fleurdelis.png  sample_bump_map.png  sand.png		     	 wood.png
+
+test scripts (made by me, except the ones that are copied over from A4):
+final.lua  nonhier.lua	smstdodeca.lua	test_bump.lua	 test_csg.lua  test_refract.lua
+fish.lua   room.lua		test.lua		test_conics.lua  test_dof.lua  test_texture.lua
+
+demo pictures for features
+final.png      nonhier_glossy.png		test_bump.png	 test_dof.png
+final_dof.png  nonhier_supersample.png	test_conics.png  test_refract.png
+nonhier.png    test.png					test_csg.png	 test_texture.png
+
+My program assumes the following: 
+Geometry Nodes are always children.
+
+My Objectives are:
+1) Extra primitives (cones and cylinders) were added
+2) Texture mapping was implemented
+3) Bump mapping was implemented (using height maps)
+4) Refraction was implemented
+5) Depth of Field was implemented
+6) Glossy Reflection was implemented
+7) Constructive Solid Geometry was implemented
+8) Anti-Aliasing using supersampling (jitter) was implemented
+9) Global Illumination was implemented [NOT COMPLETED]
+10) A final scene was rendered
+
